@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show Easy DM links
 // @namespace    com.th.dm
-// @version      1.2.0
+// @version      1.3.0
 // @description  Adds multiple eay links to often used apps in SAP DM
 // @author       Matthias Kolley
 // @match        https://*.web.dmc.cloud.sap/*
@@ -9,13 +9,31 @@
 // @updateURL    https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
 // @downloadURL  https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js
-// @grant        none
+// @require https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/toast.min.js
+// @grant       GM_getValue
+// @grant       GM_setValue
+// @grant       GM_listValues
+// @grant       GM_deleteValue
 // ==/UserScript==
 
-/* global $ */
+/* global $ iqwerty*/
 
 (function() {
     'use strict';
+    if(GM_getValue("everUsedBefore")) {
+        if(GM_getValue("hasSeenWelcomeBack")) {
+        } else {
+            const options = {
+                settings: {
+                    duration: 2000,
+                }
+            };
+            iqwerty.toast.toast('Welcome back. Using TH-scripts', options);
+            GM_setValue("hasSeenWelcomeBack", true);
+        }
+    } else {
+        GM_setValue("everUsedBefore", true);
+    };
     const adjustPadding = () => {
         const shellLayout = document.getElementById('shellLayout');
         const newElement = document.getElementById("Custom-th-bookmarklet-element")

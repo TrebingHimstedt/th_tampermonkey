@@ -1,14 +1,13 @@
 // ==UserScript==
 // @name         Show Easy DM links
 // @namespace    com.th.dm
-// @version      1.1.0
+// @version      1.1.1
 // @description  Adds multiple eay links to often used apps in SAP DM
 // @author       Matthias Kolley
 // @match        https://*.web.dmc.cloud.sap/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @updateURL    https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
 // @downloadURL  https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
-// @require https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
 // @require https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js
 // @grant        none
 // ==/UserScript==

@@ -8,8 +8,12 @@
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @updateURL    https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
 // @downloadURL  https://github.com/TrebingHimstedt/th_tampermonkey/raw/refs/heads/main/dmscript.user.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
+// @require https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js
 // @grant        none
 // ==/UserScript==
+
+/* global $ */
 
 (function() {
     'use strict';
@@ -22,7 +26,7 @@
             setTimeout(adjustPadding, 100);
         }
     }
-    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display", "ManageBOM-Display"]
+    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display"]
     const configuration = {
         showInNewTab: true,
         backgroundColor: "yellow",
@@ -76,6 +80,7 @@
         document.body.prepend(newElement);
 
         adjustPadding();
+        $("#Custom-th-bookmarklet-element").draggable();
     }, configuration.timeoutToCreateContent);
 
     window.addEventListener('resize', adjustPadding);

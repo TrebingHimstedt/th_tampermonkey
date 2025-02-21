@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show Easy DM links
 // @namespace    com.th.dm
-// @version      1.0.0
+// @version      1.1.0
 // @description  Adds multiple eay links to often used apps in SAP DM
 // @author       Matthias Kolley
 // @match        https://*.web.dmc.cloud.sap/*

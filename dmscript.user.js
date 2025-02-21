@@ -22,7 +22,7 @@
             setTimeout(adjustPadding, 100);
         }
     }
-    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display"]
+    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display", "ManageBOM-Display"]
     const configuration = {
         showInNewTab: true,
         backgroundColor: "yellow",

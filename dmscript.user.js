@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show Easy DM links
 // @namespace    com.th.dm
-// @version      1.5.0
+// @version      1.6.0
 // @description  Adds multiple eay links to often used apps in SAP DM
 // @author       Matthias Kolley
 // @match        https://*.web.dmc.cloud.sap/*
@@ -69,7 +69,15 @@
         checkboxLabel.textContent = 'Open in new tab';
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.checked = configuration.showInNewTab;
+        const checked = GM_getValue("openInNewTab");
+        if(checked != null) {
+            checkbox.checked = checked;
+        } else {
+            checkbox.checked = configuration.showInNewTab;
+        }
+        checkbox.addEventListener("change", (event) => {
+            GM_setValue("openInNewTab", event.currentTarget.checked);
+        });
         checkboxLabel.appendChild(checkbox);
     
         configDiv.appendChild(checkboxLabel);
@@ -86,7 +94,7 @@
             button.onclick = () => {
                 const origin = window.location.origin;
                 const path = window.location.pathname;
-                const target = checkbox.checked ? '_blank' : '_self';
+                const target = GM_getValue("openInNewTab") ? '_blank' : '_self';
                 window.open(`${origin + path}#${activity}`, target);
             }
             buttonsDiv.appendChild(button);
@@ -101,5 +109,8 @@
     }, configuration.timeoutToCreateContent);
 
     window.addEventListener('resize', adjustPadding);
+    window.addEventListener("hashchange", () => {
+        console.log("Hash has changed", window.location.hash.split("&")[0]);
+    });
 
 })();

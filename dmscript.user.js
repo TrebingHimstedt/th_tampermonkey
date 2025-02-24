@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Show Easy DM links
 // @namespace    com.th.dm
-// @version      1.4.0
+// @version      1.5.0
 // @description  Adds multiple eay links to often used apps in SAP DM
 // @author       Matthias Kolley
 // @match        https://*.web.dmc.cloud.sap/*
@@ -43,7 +43,7 @@
             setTimeout(adjustPadding, 100);
         }
     }
-    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display"]
+    const activities = ["DMEWorkCenterPOD-Display", "ManageMaterial-Display", "OrderReport-Display", "SFCReport-Display", "DMEPODDesigner-Edit", "ProductionProcessDesigns-Manage", "ProductionProcess-Monitor", "AutomaticTriggers-Manage", "BusinessRule-Monitor", "ServiceRegistry-Display", "EmbeddedSAC-Display", "ManageBOM-Display"]
     const configuration = {
         showInNewTab: true,
         backgroundColor: "yellow",
